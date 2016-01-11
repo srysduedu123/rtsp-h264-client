@@ -1,0 +1,29 @@
+apply plugin: "java"
+
+apply plugin: "eclipse"
+apply plugin: "idea"
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies{
+    compile(
+        "org.slf4j:slf4j-log4j12:1.7.5",
+        "log4j:log4j:1.2.16"
+    )
+    testCompile(
+        "junit:junit:4.11"
+    )
+}
+
+tasks.withType(JavaCompile){
+    options.encoding ="utf-8"
+}
+tasks.withType(Javadoc){
+    options.encoding = "utf-8"
+    options.charSet = "utf-8"
+}
